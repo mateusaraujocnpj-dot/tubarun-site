@@ -212,6 +212,24 @@ img{max-width:100%}
 @media (min-width:1800px){
  html{font-size:17px}
 }
+
+/* ===== Formulário de contato ===== */
+.tb-form{display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:18px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+.tb-field{display:flex;flex-direction:column;gap:6px}
+.tb-field label{font-size:12px;font-weight:600;color:#fff;letter-spacing:.01em}
+.tb-field label span{font-weight:400;color:#b5b5b5}
+.tb-field input,.tb-field select,.tb-field textarea{width:100%;box-sizing:border-box;min-height:48px;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s}
+.tb-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#50D0A8 50%),linear-gradient(135deg,#50D0A8 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.tb-field select option{color:#000}
+.tb-field textarea{resize:vertical;min-height:84px}
+.tb-field input::placeholder,.tb-field textarea::placeholder{color:#9a9a9a}
+.tb-field input:focus,.tb-field select:focus,.tb-field textarea:focus{border-color:#50D0A8;box-shadow:0 0 0 3px rgba(80,208,168,.25)}
+.tb-field .tb-invalid{border-color:#ff8a8a}
+.tb-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.tb-form-btn{justify-content:space-between;width:100%;margin-top:4px}
+.tb-form-btn[disabled]{opacity:.6;cursor:wait;transform:none}
+.tb-form-status{margin:0;min-height:20px;font-size:14px;line-height:1.5;color:#dddddd}
+.tb-form-status.ok{color:#50D0A8}.tb-form-status.err{color:#ff8a8a}
 </style>
 </head>
 <body>
@@ -535,9 +553,25 @@ img{max-width:100%}
 <p style="margin: 0 0 20px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #50D0A8">Seu lugar pode ser aqui</p>
 <h2 style="margin: 0; font-size: clamp(48px, 7.6vw, 116px); font-weight: 600; line-height: .88; letter-spacing: -.06em">BORA FAZER PARTE<br><span style="color: #50D0A8">DESSA FAMÍLIA?</span></h2>
 </div>
-<div style="flex: 1 1 320px; max-width: 420px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<div style="flex: 1 1 360px; max-width: 460px; display: flex; flex-direction: column; gap: 18px; align-items: stretch">
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #dddddd">Seja pra treinar, correr, participar de um evento ou vestir a camisa: a Tubarun tem um jeito de viver o esporte que combina com você.</p>
-<a class="tb-btn tb-mint" href="#contato">Quero conhecer a Tubarun <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+<form class="tb-form" id="tb-form" novalidate>
+<div class="tb-field"><label for="tb-nome">Seu nome</label><input id="tb-nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required minlength="2" maxlength="120"></div>
+<div class="tb-field"><label for="tb-whats">WhatsApp</label><input id="tb-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(41) 99999-9999" required minlength="8" maxlength="20"></div>
+<div class="tb-field"><label for="tb-interesse">Tenho interesse em</label>
+<select id="tb-interesse" name="interesse" required>
+<option value="academia">Academia</option>
+<option value="assessoria">Assessoria esportiva</option>
+<option value="eventos">Participar de eventos</option>
+<option value="evento_contratar">Contratar um evento da Tubarun</option>
+<option value="loja">Loja &amp; uniformes</option>
+<option value="outro">Ainda não sei / outro</option>
+</select></div>
+<div class="tb-field"><label for="tb-msg">Mensagem <span>(opcional)</span></label><textarea id="tb-msg" name="mensagem" rows="3" maxlength="1000" placeholder="Conte rapidinho o que você procura"></textarea></div>
+<input class="tb-hp" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" class="tb-btn tb-mint tb-form-btn">Quero fazer parte <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></button>
+<p class="tb-form-status" role="status" aria-live="polite"></p>
+</form>
 </div>
 </div>
 </div>
@@ -611,6 +645,45 @@ img{max-width:100%}
     a.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(a.getAttribute('data-msg')||'');
     a.target='_blank'; a.rel='noopener';
   });
+
+  /* ===== Formulário → Supabase ===== */
+  var SUPABASE_URL = 'https://jyyljatbmokpdjvcxokw.supabase.co';
+  var SUPABASE_KEY = 'sb_publishable_QaPu1vz07EcMLbbI6rKVSw_kSym1KMg';
+  var form = document.getElementById('tb-form');
+  if(form){
+    var status = form.querySelector('.tb-form-status'), btn = form.querySelector('.tb-form-btn');
+    var params = new URLSearchParams(location.search);
+    if(params.get('interesse')) { var sel=form.querySelector('#tb-interesse'); if(sel.querySelector('option[value="'+params.get('interesse')+'"]')) sel.value=params.get('interesse'); }
+    document.querySelectorAll('a[href="#contato"]').forEach(function(a){
+      if(a.closest('#eventos')) a.addEventListener('click',function(){ var sel=form.querySelector('#tb-interesse'); sel.value='evento_contratar'; });
+    });
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(form.empresa.value) return; // robô
+      var nome=form.nome.value.trim(), whats=form.whatsapp.value.trim(), interesse=form.interesse.value, msg=form.mensagem.value.trim();
+      form.querySelectorAll('.tb-invalid').forEach(function(x){x.classList.remove('tb-invalid');});
+      var digits=whats.replace(/\D/g,'');
+      if(nome.length<2){ form.nome.classList.add('tb-invalid'); status.className='tb-form-status err'; status.textContent='Coloque seu nome, por favor.'; form.nome.focus(); return; }
+      if(digits.length<10){ form.whatsapp.classList.add('tb-invalid'); status.className='tb-form-status err'; status.textContent='Confira o WhatsApp com DDD.'; form.whatsapp.focus(); return; }
+      btn.disabled=true; status.className='tb-form-status'; status.textContent='Enviando…';
+      try{
+        var r = await fetch(SUPABASE_URL+'/rest/v1/contatos_site',{method:'POST',headers:{'apikey':SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+          body:JSON.stringify({nome:nome,whatsapp:whats,interesse:interesse,mensagem:msg||null,origem:'site'})});
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        status.className='tb-form-status ok';
+        status.textContent='Recebemos seu contato, '+nome.split(' ')[0]+'! A equipe Tubarun vai falar com você em breve.';
+        form.reset();
+        if(WHATSAPP){
+          var labels={academia:'a Academia',assessoria:'a Assessoria Esportiva',eventos:'os eventos',evento_contratar:'contratar um evento da Tubarun',loja:'a Loja e os uniformes',outro:'conhecer a Tubarun'};
+          var t='Olá! Sou '+nome+' e tenho interesse em '+(labels[interesse]||'conhecer a Tubarun')+'.'+(msg?' '+msg:'');
+          window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(t),'_blank','noopener');
+        }
+      }catch(err){
+        status.className='tb-form-status err';
+        status.textContent='Não conseguimos enviar agora. Tente de novo em instantes'+(WHATSAPP?' ou fale direto no WhatsApp.':'.');
+      }finally{ btn.disabled=false; }
+    });
+  }
   /* ===== Animações ===== */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
