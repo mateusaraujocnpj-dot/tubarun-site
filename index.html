@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Tubarun — um ecossistema esportivo com Academia, Assessoria Esportiva, Eventos e Loja.">
+<link rel="icon" type="image/png" href="assets/img/logo_white.png">
+<meta property="og:title" content="Tubarun — Um ecossistema esportivo">
+<meta property="og:description" content="Academia, Assessoria Esportiva, Eventos e Loja. Muito além do treino: um jeito de viver.">
+<meta property="og:image" content="assets/img/head1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Tubarun — Um ecossistema esportivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff;color:#000;font-family:'Strichpunkt Sans','Inter Tight',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:hover{color:inherit}
+html{scroll-behavior:smooth}
+.tb-btn{display:inline-flex;align-items:center;gap:16px;min-height:56px;padding:9px 9px 9px 22px;border-radius:9px;font-weight:600;font-size:15px;line-height:1.2;text-decoration:none;box-sizing:border-box;border:1px solid transparent;transition:transform .2s ease,background-color .2s ease,border-color .2s ease;cursor:pointer;font-family:inherit}
+.tb-btn:hover{transform:translateY(-2px)}
+.tb-btn:focus-visible,.tb-ico:focus-visible,.faq-q:focus-visible,.nav a:focus-visible,.eco-link:focus-visible{outline:3px solid #50D0A8;outline-offset:3px}
+.tb-btn .ar{display:inline-flex;align-items:center;justify-content:center;width:37px;height:37px;border-radius:6px;flex:none}
+.tb-mint{background:#50D0A8;color:#000}.tb-mint:hover{background:#6adbb7;color:#000}.tb-mint .ar{background:#000;color:#50D0A8}
+.tb-out{border-color:rgba(255,255,255,.45);color:#fff}.tb-out:hover{border-color:#fff;color:#fff}.tb-out .ar{background:#fff;color:#000}
+.tb-dark{background:#000;color:#fff}.tb-dark:hover{background:#191919;color:#fff}.tb-dark .ar{background:#50D0A8;color:#000}
+.tb-soft{border-color:#000;color:#000}.tb-soft:hover{background:#000;color:#fff}.tb-soft .ar{background:#000;color:#fff}
+.nav a{text-decoration:none;color:#dddddd;font-size:14px;font-weight:500;padding:8px 2px}
+.nav a:hover{color:#50D0A8}
+.foot-nav a{text-decoration:none;color:#dddddd;font-size:14px}
+.foot-nav a:hover{color:#50D0A8}
+.ph{background-color:#191919;background-image:repeating-linear-gradient(135deg,rgba(80,208,168,.08) 0 1px,transparent 1px 20px)}
+.ph-light{background-color:#eeeeee;background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.05) 0 1px,transparent 1px 20px)}
+.eco{transition:transform .25s ease}
+.eco:hover{transform:translateY(-4px)}
+.eco:hover .eco-img{transform:scale(1.05)}
+.eco-link{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.12em}
+.tb-ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:9px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;padding:0}
+.tb-ico:hover{border-color:#50D0A8;color:#50D0A8}
+.faq-q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:20px;background:transparent;border:0;padding:24px 0;text-align:left;font-family:inherit;font-size:19px;font-weight:600;letter-spacing:-.02em;color:#000;cursor:pointer}
+.faq-q:hover{color:#2f8f71}
+.scroller{scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#50D0A8 #191919}
+.scroller > article{scroll-snap-align:start}
+</style>
+<style>
+.bg-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity 1.6s ease}
+.bg-on{opacity:1;animation:tbKen 7s ease-out forwards}
+.bg-a{object-position:50% 56%;transform-origin:50% 58%}
+.bg-n{object-position:50% 28%;transform-origin:50% 30%}
+.bg-dot{display:inline-block;width:22px;height:3px;border-radius:2px;background:rgba(255,255,255,.3);transition:width .4s ease,background-color .4s ease}
+.bg-dot-on{width:44px;background:#50D0A8}
+@keyframes tbKen{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+@media (prefers-reduced-motion: reduce){.bg-slide{transition:none}.bg-on{animation:none;transform:scale(1.04)}}
+.faq-a{margin:-6px 0 0;padding:0 60px 26px 0;font-size:16px;line-height:1.65;color:#646464}
+.faq-ic{width:36px;height:36px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:none;box-sizing:border-box;background:#f7f7f7;border:1px solid #e5e5e5;color:#000}
+.faq-ic .minus{display:none}
+.faq-item.open .faq-ic{background:#000;border-color:#000;color:#50D0A8}
+.faq-item.open .faq-ic .plus{display:none}
+.faq-item.open .faq-ic .minus{display:block}
+@media (max-width:560px){.faq-a{padding-right:0}}
+.topbar .nav a{color:#3a3a3a}
+.topbar .nav a:hover{color:#1f9c78}
+.val-card{transition:transform .25s ease,box-shadow .25s ease}
+.val-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,107,84,.14)}
+.val-ic{position:relative;width:60px;height:60px;border-radius:16px;background:#000;color:#50D0A8;display:inline-flex;align-items:center;justify-content:center;transition:background-color .25s ease,color .25s ease}
+.val-ic::after{content:"";position:absolute;right:-4px;bottom:-4px;width:14px;height:14px;border-radius:5px;background:#50D0A8;border:3px solid #fff;transition:background-color .25s ease}
+.val-card:hover .val-ic{background:#50D0A8;color:#000}
+.val-card:hover .val-ic::after{background:#000}
+.g-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:250px;gap:14px;grid-auto-flow:dense}
+.g-tile{position:relative;margin:0;border-radius:18px;overflow:hidden;background:#191919}
+.g-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.g-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,0) 45%);pointer-events:none}
+.g-tile:hover img{transform:scale(1.05)}
+.g-tile figcaption{position:absolute;left:20px;right:20px;bottom:18px;z-index:1;color:#fff}
+.g-title{font-size:17px;font-weight:600;letter-spacing:-.03em;line-height:1.02}
+.g-title-lg{font-size:clamp(24px,2.6vw,36px);letter-spacing:-.055em;line-height:.95}
+.g-sub{margin-top:8px;font-size:13px;color:#dddddd}
+.g-big{grid-column:span 2;grid-row:span 2}
+.g-tall{grid-row:span 2}
+@media (max-width:900px){.g-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}}
+@media (max-width:520px){.g-grid{grid-template-columns:1fr;grid-auto-rows:300px}.g-big,.g-tall{grid-column:auto;grid-row:span 1}}
+.p-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.p-card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:#191919;border:1px solid #2a2a2a;color:#fff;text-decoration:none;transition:transform .25s ease,border-color .25s ease}
+.p-card:hover{transform:translateY(-4px);border-color:#50D0A8}
+.p-img{position:relative;aspect-ratio:3/4;background:#d6d6d6;overflow:hidden}
+.p-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.p-card:hover .p-img img{transform:scale(1.05)}
+.p-meta{padding:16px 18px 18px}
+.p-meta h3{margin:0 0 4px;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.p-meta span{font-size:13px;color:#b5b5b5}
+.p-cta{background:#50D0A8;border-color:#50D0A8;color:#000;padding:26px;justify-content:space-between;min-height:100%;box-sizing:border-box}
+.p-cta:hover{border-color:#fff;color:#000}
+.p-cta-ar{display:inline-flex;align-items:center;gap:14px;font-size:15px;font-weight:600}
+.p-cta-ar .ar{display:inline-flex;align-items:center;justify-content:center;width:37px;height:37px;border-radius:6px;background:#000;color:#50D0A8}
+.p-cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (max-width:980px){.p-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.p-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.r-chip{padding:9px 13px;border-radius:9px;border:1px solid #3a3a3a;font-size:13px;font-weight:500;color:#fff}
+
+.menu-toggle{display:none;position:relative;width:48px;height:48px;border-radius:9px;border:1px solid #e5e5e5;background:#fff;cursor:pointer;padding:0;flex:none}
+.menu-toggle span{position:absolute;left:13px;width:22px;height:2px;border-radius:2px;background:#000;transition:transform .25s ease,opacity .2s ease,top .25s ease}
+.menu-toggle span:nth-child(1){top:16px}.menu-toggle span:nth-child(2){top:23px}.menu-toggle span:nth-child(3){top:30px}
+.topbar.open .menu-toggle span:nth-child(1){top:23px;transform:rotate(45deg)}
+.topbar.open .menu-toggle span:nth-child(2){opacity:0}
+.topbar.open .menu-toggle span:nth-child(3){top:23px;transform:rotate(-45deg)}
+.menu-toggle:focus-visible{outline:3px solid #50D0A8;outline-offset:3px}
+.nav .nav-cta{display:none}
+@media (max-width:900px){
+ .topbar{flex-wrap:nowrap!important}
+ .topbar .nav,.topbar .top-cta{display:none!important}
+ .menu-toggle{display:inline-block}
+ .topbar.open .nav{display:flex!important;flex-direction:column;flex-wrap:nowrap!important;gap:0!important;position:absolute;left:14px;right:14px;top:calc(100% + 6px);background:#fff;border-radius:18px;padding:8px 20px 20px;box-shadow:0 24px 50px rgba(0,0,0,.25);border:1px solid #e5e5e5}
+ .topbar.open .nav a{padding:15px 2px;border-bottom:1px solid #eeeeee;font-size:18px;font-weight:600;color:#000}
+ .topbar.open .nav a:hover{color:#1f9c78}
+ .topbar.open .nav .nav-cta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding:16px 18px;border:0;border-radius:9px;background:#50D0A8;color:#000;font-size:16px}
+}
+.ev-chip{padding:9px 13px;border-radius:9px;border:1px solid #3a3a3a;font-size:13px;font-weight:500;color:#fff}
+.ev-step{padding:28px;border-radius:18px;background:#f7f7f7;border:1px solid #e5e5e5}
+.ev-ic{width:52px;height:52px;border-radius:14px;background:#000;color:#50D0A8;display:inline-flex;align-items:center;justify-content:center}
+#academia,#assessoria,#eventos,#loja{scroll-margin-top:16px}
+@media (max-width:520px){.brand-sub{display:none}}
+.bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.05fr);gap:22px}
+.bl-card,.bl-feature{position:relative;display:flex;flex-direction:column;border-radius:22px;padding:32px 34px 36px;box-sizing:border-box;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.bl-card{background:#fff;border:1px solid #d5ebe2;color:#000}
+.bl-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,107,84,.12)}
+.bl-feature{grid-column:4;grid-row:1 / span 2;background:#000;color:#fff;min-height:100%}
+.bl-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:38px}
+.bl-num{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.06em;color:#646464}
+.bl-check{font-size:12px;color:#8fbfae}
+.bl-feature .bl-check{color:#3a6b5c}
+.bl-ic{width:86px;height:86px;border-radius:50%;background:#f2f7f5;border:1px solid #dcebe5;color:#0b2e23;display:inline-flex;align-items:center;justify-content:center;margin-bottom:44px;transition:background-color .25s ease,color .25s ease}
+.bl-card:hover .bl-ic{background:#50D0A8;color:#000;border-color:#50D0A8}
+.bl-ic-dark{width:96px;height:96px;background:#141414;border-color:#2a2a2a;color:#50D0A8}
+.bl-card h3{margin:0 0 10px;font-size:22px;font-weight:600;letter-spacing:-.035em}
+.bl-card p{margin:0;font-size:15px;line-height:1.6;color:#646464}
+.bl-feature h3{position:relative;margin:0 0 14px;font-size:clamp(28px,2.6vw,36px);font-weight:600;line-height:1;letter-spacing:-.05em}
+.bl-feature p{position:relative;margin:0;font-size:15px;line-height:1.6;color:#b5b5b5}
+.bl-rings{position:absolute;right:0;bottom:0;width:320px;height:320px;pointer-events:none}
+@media (max-width:1100px){.bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bl-feature{grid-column:1 / -1;grid-row:auto;min-height:320px}}
+@media (max-width:620px){.bl-grid{grid-template-columns:1fr}.bl-card,.bl-feature{padding:26px}}
+
+/* ===== Animações ===== */
+.mq{position:relative;margin:clamp(28px,4vw,48px) -20px 0;transform:rotate(-1.2deg);background:#50D0A8;color:#000;overflow:hidden;padding:18px 0;border-top:2px solid #000;border-bottom:2px solid #000}
+.mq-track{display:flex;width:max-content;animation:mqMove 32s linear infinite}
+.mq-run{display:flex;align-items:center;flex:none}
+.mq-item{font-size:clamp(22px,2.6vw,34px);font-weight:600;letter-spacing:-.04em;white-space:nowrap;padding:0 26px}
+.mq-dot{width:12px;height:12px;border-radius:3px;background:#000;transform:rotate(45deg);flex:none}
+@keyframes mqMove{to{transform:translateX(-50%)}}
+
+.js-anim .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0ms)}
+.js-anim .rv.in{opacity:1;transform:none}
+.js-anim .rv-img{clip-path:inset(14% 0 0 0 round 22px);transition:clip-path 1.2s cubic-bezier(.2,.75,.2,1)}
+.js-anim .rv-img.in{clip-path:inset(0 0 0 0 round 22px)}
+.js-anim .rv-img img{transform:scale(1.12);transition:transform 1.6s cubic-bezier(.2,.75,.2,1)}
+.js-anim .rv-img.in img{transform:scale(1)}
+.ln{display:block;overflow:hidden;padding:.14em 0 .06em;margin:-.14em 0 -.06em}
+.ln-in{display:block}
+.js-anim .ln-in{transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0ms)}
+.js-anim .in .ln-in,.js-anim .ln.in .ln-in{transform:none}
+.js-anim .hero-in{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);transition-delay:var(--d,0ms)}
+.js-anim.loaded .hero-in{opacity:1;transform:none}
+.tb-btn .ar svg{transition:transform .25s ease}
+.tb-btn:hover .ar svg{transform:translate(2px,-2px)}
+.topbar .nav a{position:relative}
+.topbar .nav a:not(.nav-cta)::after{content:"";position:absolute;left:2px;right:2px;bottom:2px;height:2px;border-radius:2px;background:#50D0A8;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.topbar .nav a:not(.nav-cta):hover::after{transform:scaleX(1)}
+#numeros-titulo + div > div{position:relative;overflow:hidden;transition:transform .7s cubic-bezier(.2,.75,.2,1),box-shadow .7s ease}
+#numeros-titulo + div > div::after{content:"";position:absolute;left:24px;right:24px;bottom:10px;height:3px;border-radius:2px;background:currentColor;opacity:.35;transform:scaleX(0);transform-origin:left;transition:transform 1.5s cubic-bezier(.2,.75,.2,1)}
+#numeros-titulo + div > div.num-on::after{transform:scaleX(1)}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float{animation:floatY 5s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){
+ .mq-track,.float{animation:none}
+ .js-anim .rv,.js-anim .hero-in,.js-anim .ln-in{opacity:1!important;transform:none!important;transition:none!important}
+ .js-anim .rv-img{clip-path:none!important}.js-anim .rv-img img{transform:none!important}
+}
+
+/* ===== Ajustes responsivos ===== */
+img{max-width:100%}
+@media (max-width:900px){
+ .bl-top{margin-bottom:24px}.bl-ic{width:68px;height:68px;margin-bottom:26px}.bl-ic svg{width:28px;height:28px}
+ .bl-ic-dark{width:76px;height:76px}
+}
+@media (max-width:980px) and (min-width:721px){.p-cta{grid-column:span 2;justify-content:space-between}}
+@media (max-width:720px){
+ .p-cta{grid-column:1 / -1;flex-direction:row;align-items:flex-end;gap:16px;min-height:0}
+ .p-cta h3{font-size:26px!important}
+ .p-meta{padding:12px 14px 14px}.p-meta h3{font-size:15px}.p-meta span{font-size:12px}
+ #como-fazer-parte li > div:first-child{margin-bottom:28px!important}
+ #como-fazer-parte li > div:nth-child(2){font-size:44px!important}
+}
+@media (max-width:520px){
+ .g-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px;gap:10px}
+ .g-big{grid-column:1 / -1;grid-row:span 1}
+ .g-tall{grid-column:auto;grid-row:span 2}
+ .g-tile figcaption{left:14px;right:14px;bottom:12px}
+ .g-title{font-size:14px}.g-title-lg{font-size:22px}.g-sub{display:none}
+ .tb-btn{min-height:52px;font-size:14px;padding:7px 7px 7px 18px}
+ .tb-btn .ar{width:34px;height:34px}
+ #numeros-titulo + div{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+ #numeros-titulo + div > div{padding:18px 14px!important}
+ #numeros-titulo + div > div > div:first-child{font-size:32px!important}
+ #numeros-titulo + div > div > div:last-child{font-size:12px!important;margin-top:8px!important}
+ #numeros-titulo + div > div::after{left:14px;right:14px;bottom:8px}
+ .bl-card,.bl-feature{padding:24px 22px 26px}
+}
+@media (max-width:360px){
+ .p-grid{grid-template-columns:1fr}
+}
+@media (min-width:1800px){
+ html{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div style="width: 100%; overflow-x: hidden">
+
+<header class="topbar" style="position: relative; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; max-width: 1412px; margin: 0 auto; padding: 14px clamp(18px, 3vw, 34px); box-sizing: border-box; background: #fff; color: #000">
+<a href="#inicio" class="brand" aria-label="Tubarun — início" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #000"><img src="assets/img/logo_white.png" alt="Tubarun" style="display: block; height: 38px; width: auto"></a>
+<nav class="nav" id="menu-principal" aria-label="Menu principal" style="display: flex; flex-wrap: wrap; gap: 6px 26px">
+<a href="#inicio">Início</a>
+<a href="#loja">Uniformes</a>
+<a href="#assessoria">Assessoria</a>
+<a href="#academia">Academia</a>
+<a href="#eventos">Eventos</a>
+<a class="nav-cta wa-link" href="#contato" data-msg="Olá! Vim pelo site da Tubarun e quero mais informações.">Entrar em contato <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg></a>
+</nav>
+<a class="tb-btn tb-mint top-cta wa-link" href="#contato" data-msg="Olá! Vim pelo site da Tubarun e quero mais informações." style="min-height: 50px; padding: 6px 6px 6px 18px; font-size: 14px">Entrar em contato <span class="ar" style="width: 36px; height: 36px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg></span></a>
+<button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+</header>
+<!-- ============ HERO ============ -->
+<section id="inicio" style="padding: 0 14px 14px; box-sizing: border-box">
+<div style="position: relative; background: #000; color: #fff; border-radius: 22px; overflow: hidden; min-height: 820px">
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden">
+<img fetchpriority="high" class="bg-slide bg-on" src="assets/img/head1.jpg" alt="" style="object-position: 50% 55%; transform-origin: 50% 55%">
+<img loading="lazy" decoding="async" class="bg-slide" src="assets/img/head2.jpg" alt="" style="object-position: 50% 50%; transform-origin: 50% 50%">
+<img loading="lazy" decoding="async" class="bg-slide" src="assets/img/head3.jpg" alt="" style="object-position: 50% 56%; transform-origin: 50% 56%">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.25) 100%)"></div>
+<div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 40%)"></div>
+</div>
+
+
+<div style="position: relative; padding: clamp(40px, 6vw, 72px) clamp(18px, 3vw, 34px) 0">
+<p class="eyebrow" style="margin: 0 0 22px; font-size: 11px; font-weight: 600; letter-spacing: .16em; color: #50D0A8">ACADEMIA · ASSESSORIA · EVENTOS · LOJA</p>
+<h1 style="margin: 0; font-size: clamp(50px, 9.4vw, 148px); font-weight: 600; line-height: .9; letter-spacing: -.055em; text-transform: uppercase">Muito além do treino.<br><span style="color: #50D0A8">Um jeito de viver.</span></h1>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch; margin-top: clamp(32px, 4vw, 52px)">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding-bottom: 8px">
+<p style="margin: 0; max-width: 470px; font-size: 17px; line-height: 1.65; color: #dddddd">A Tubarun reúne diferentes formas de viver o esporte. Um lugar pra cuidar de você, buscar novos desafios, estar com a galera e fazer parte de uma família que se movimenta junto.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="tb-btn tb-mint" href="#ecossistema">Conhecer o ecossistema <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+<a class="tb-btn tb-out" href="#contato">Falar com a equipe <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+</div>
+</div>
+<div style="flex: 2 1 480px; position: relative; min-height: 420px">
+<div style="position: absolute; left: 20px; bottom: 20px; display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 18px; background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(10px)">
+<div style="display: flex" role="img" aria-label="Alunos da família Tubarun">
+<img loading="lazy" decoding="async" src="assets/img/av1.jpg" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #000; position: relative; z-index: 3"><img loading="lazy" decoding="async" src="assets/img/av2.jpg" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #000; margin-left: -12px; position: relative; z-index: 2"><img loading="lazy" decoding="async" src="assets/img/av3.jpg" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #000; margin-left: -12px; position: relative; z-index: 1"><span style="width: 40px; height: 40px; margin-left: -12px; border-radius: 50%; background: #50D0A8; border: 2px solid #000; display: inline-flex; align-items: center; justify-content: center; color: #000; font-size: 18px; font-weight: 700; box-sizing: border-box">+</span>
+</div>
+<div>
+<div style="font-size: 30px; font-weight: 600; letter-spacing: -.05em; line-height: 1">+200</div>
+<div style="font-size: 12px; color: #dddddd; margin-top: 4px">alunos na família Tubarun</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 28px clamp(18px, 3vw, 34px) 30px">
+<div style="display: flex; align-items: center; gap: 14px">
+<span aria-hidden="true" style="display: flex; gap: 8px"><span class="bg-dot bg-dot-on"></span><span class="bg-dot"></span><span class="bg-dot"></span></span>
+</div>
+<span style="font-size: 11px; font-weight: 600; letter-spacing: .16em; color: #dddddd">FOTOGRAFIA REAL DA COMUNIDADE</span>
+</div>
+
+</div>
+</section>
+
+<!-- ============ NÚMEROS ============ -->
+<section aria-labelledby="numeros-titulo" style="padding: clamp(64px, 8vw, 112px) 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end; justify-content: space-between">
+<h2 id="numeros-titulo" style="flex: 1 1 460px; margin: 0; font-size: clamp(36px, 4.6vw, 64px); font-weight: 600; line-height: .95; letter-spacing: -.055em; text-transform: uppercase">A Tubarun é feita de pessoas.<br><span style="color: #646464">E cada história importa.</span></h2>
+<div style="flex: 1 1 520px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px">
+<div style="padding: 26px 24px; border-radius: 18px; background: #000; color: #fff"><div style="font-size: clamp(44px, 4.2vw, 62px); font-weight: 600; letter-spacing: -.06em; line-height: 1; color: #50D0A8">+200</div><div style="margin-top: 14px; font-size: 14px; color: #dddddd">alunos</div></div>
+<div style="padding: 26px 24px; border-radius: 18px; background: #f7f7f7; border: 1px solid #e5e5e5"><div style="font-size: clamp(44px, 4.2vw, 62px); font-weight: 600; letter-spacing: -.06em; line-height: 1">+6</div><div style="margin-top: 14px; font-size: 14px; color: #646464">anos de Tubarun</div></div>
+<div style="padding: 26px 24px; border-radius: 18px; background: #50D0A8"><div style="font-size: clamp(44px, 4.2vw, 62px); font-weight: 600; letter-spacing: -.06em; line-height: 1">04</div><div style="margin-top: 14px; font-size: 14px; color: #0b2e23">frentes esportivas</div></div>
+</div>
+</div>
+</section>
+
+<!-- ============ ECOSSISTEMA ============ -->
+<section id="ecossistema" style="padding: clamp(64px, 8vw, 112px) 0; background: #f7f7f7">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 48px">
+<div style="flex: 1 1 520px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #646464">Conheça o ecossistema Tubarun</p>
+<h2 style="margin: 0; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">QUATRO CAMINHOS.<br>A MESMA ENERGIA.</h2>
+</div>
+<p style="flex: 1 1 340px; max-width: 420px; margin: 0; font-size: 16px; line-height: 1.65; color: #646464">Mais do que uma assessoria de corrida. A Tubarun conecta treino, bem-estar, experiências esportivas e produtos em um só lugar.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+
+<article class="eco" id="academia" style="display: flex; flex-direction: column; min-height: 600px; padding: 28px; border-radius: 18px; background: #000; color: #fff; box-sizing: border-box">
+<div style="position: relative; height: 300px; margin: -14px -14px 26px; border-radius: 12px; overflow: hidden"><img src="assets/img/academia.jpg" alt="Aluna treinando com halter na Academia Tubarun" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; transition: transform .6s ease" class="eco-img"><div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 40%)"></div><span style="position: absolute; top: 16px; left: 16px; padding: 6px 10px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .16em; backdrop-filter: blur(6px)">01 / TUBARUN</span><span style="position: absolute; top: 12px; right: 12px; width: 52px; height: 52px; border-radius: 14px; background: #50D0A8; color: #000; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.25)"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6.5" width="3" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></rect><rect x="16" y="6.5" width="3" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></rect><rect x="2.5" y="9" width="2.5" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></rect><rect x="19" y="9" width="2.5" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+<div style="flex: 1"></div>
+<h3 style="margin: 0 0 14px; font-size: clamp(26px, 2.4vw, 34px); font-weight: 600; line-height: .95; letter-spacing: -.055em">ACADEMIA<br>TUBARUN</h3>
+<p style="margin: 0 0 26px; font-size: 15px; line-height: 1.6; color: #dddddd">Pra colocar o movimento na rotina e fazer do cuidado com você um hábito. Um espaço pra treinar, se sentir bem e evoluir no seu ritmo.</p>
+<a class="eco-link" href="#contato" style="color: #50D0A8">CONHECER A ACADEMIA <span aria-hidden="true">↗</span></a>
+</article>
+
+<article class="eco" id="assessoria" style="display: flex; flex-direction: column; min-height: 600px; padding: 28px; border-radius: 18px; background: #50D0A8; color: #000; box-sizing: border-box">
+<div style="position: relative; height: 300px; margin: -14px -14px 26px; border-radius: 12px; overflow: hidden"><img src="assets/img/assessoria.jpg" alt="Atleta da assessoria correndo em prova de rua" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform .6s ease" class="eco-img"><div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 40%)"></div><span style="position: absolute; top: 16px; left: 16px; padding: 6px 10px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .16em; backdrop-filter: blur(6px)">02 / TUBARUN</span><span style="position: absolute; top: 12px; right: 12px; width: 52px; height: 52px; border-radius: 14px; background: #50D0A8; color: #000; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.25)"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M12 13.5V9.5M10 2.5h4M12 2.5V6M18.3 6.8l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13.5l2.6 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+<div style="flex: 1"></div>
+<h3 style="margin: 0 0 14px; font-size: clamp(26px, 2.4vw, 34px); font-weight: 600; line-height: .95; letter-spacing: -.055em">ASSESSORIA<br>ESPORTIVA</h3>
+<p style="margin: 0 0 26px; font-size: 15px; line-height: 1.6; color: #0b2e23">Corrida, ciclismo, natação e triathlon. Treinos personalizados de acordo com seu nível, sua rotina e o objetivo que você quer alcançar.</p>
+<a class="eco-link" href="#contato" style="color: #000">CONHECER A ASSESSORIA <span aria-hidden="true">↗</span></a>
+</article>
+
+<article class="eco" style="display: flex; flex-direction: column; min-height: 600px; padding: 28px; border-radius: 18px; background: #191919; color: #fff; box-sizing: border-box">
+<div style="position: relative; height: 300px; margin: -14px -14px 26px; border-radius: 12px; overflow: hidden;"><img src="assets/img/eventos.jpg" alt="Largada de corrida de rua organizada pela Tubarun" loading="lazy" class="eco-img" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; transition: transform .6s ease"><div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 40%)"></div><span style="position: absolute; top: 16px; left: 16px; padding: 6px 10px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .16em; backdrop-filter: blur(6px)">03 / TUBARUN</span><span style="position: absolute; top: 12px; right: 12px; width: 52px; height: 52px; border-radius: 14px; background: #50D0A8; color: #000; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.25)"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 4h13.5l-2.2 4 2.2 4H5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.4 4h3.4v4H8.4zM11.8 8h3.4v4h-3.4z" fill="currentColor" opacity=".9"></path></svg></span></div>
+<div style="flex: 1"></div>
+<h3 style="margin: 0 0 14px; font-size: clamp(26px, 2.4vw, 34px); font-weight: 600; line-height: .95; letter-spacing: -.055em">EVENTOS<br>ESPORTIVOS</h3>
+<p style="margin: 0 0 26px; font-size: 15px; line-height: 1.6; color: #dddddd">O frio na barriga antes da largada, a energia da galera e a emoção da chegada. A Tubarun também organiza eventos e corridas de rua.</p>
+<a class="eco-link" href="#eventos" style="color: #50D0A8">CONHECER OS EVENTOS <span aria-hidden="true">↗</span></a>
+</article>
+
+<article class="eco" style="display: flex; flex-direction: column; min-height: 600px; padding: 28px; border-radius: 18px; background: #fff; color: #000; border: 1px solid #e5e5e5; box-sizing: border-box">
+<div style="position: relative; height: 300px; margin: -14px -14px 26px; border-radius: 12px; overflow: hidden; background: #000;"><img src="assets/img/uniformes.png" alt="Coleção de roupas e uniformes Tubarun" loading="lazy" class="eco-img" style="position: absolute; inset: 44px 16px 10px; width: calc(100% - 32px); height: calc(100% - 54px); object-fit: contain; transition: transform .6s ease"><span style="position: absolute; top: 16px; left: 16px; padding: 6px 10px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .16em; backdrop-filter: blur(6px)">04 / TUBARUN</span><span style="position: absolute; top: 12px; right: 12px; width: 52px; height: 52px; border-radius: 14px; background: #50D0A8; color: #000; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.25)"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.1 12.2a1 1 0 0 1-1 .8H7.1a1 1 0 0 1-1-.8L5 8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.5 12.5c.6 1.3 1.5 2 2.5 2s1.9-.7 2.5-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+<div style="flex: 1"></div>
+<h3 style="margin: 0 0 14px; font-size: clamp(26px, 2.4vw, 34px); font-weight: 600; line-height: .95; letter-spacing: -.055em">LOJA &amp;<br>UNIFORMES</h3>
+<p style="margin: 0 0 26px; font-size: 15px; line-height: 1.6; color: #646464">Peças que acompanham quem não para. Roupas e uniformes pensados pra juntar conforto, desempenho e o orgulho de fazer parte.</p>
+<a class="eco-link" href="#loja" style="color: #000">CONHECER A LOJA <span aria-hidden="true">↗</span></a>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- ============ NOSSA ESSÊNCIA ============ -->
+<section id="essencia" style="padding: clamp(64px, 8vw, 112px) 0; background: #000; color: #fff">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: stretch">
+<div class="ph" style="flex: 1 1 420px; position: relative; min-height: 560px; border-radius: 22px; overflow: hidden; border: 1px solid #2a2a2a">
+<img src="assets/img/head1.jpg" alt="Turma da Tubarun reunida na orla depois de um treino noturno" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 50%">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 35%)"></div>
+<span style="position: absolute; left: 22px; bottom: 22px; padding: 10px 14px; border-radius: 5px; background: #50D0A8; color: #000; font-size: 11px; font-weight: 600; letter-spacing: .14em">A NOSSA FAMÍLIA</span>
+</div>
+<div style="flex: 1 1 480px; display: flex; flex-direction: column; justify-content: center">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #50D0A8">Não é só sobre esporte</p>
+<h2 style="margin: 0 0 22px; font-size: clamp(38px, 4.6vw, 62px); font-weight: 600; line-height: .92; letter-spacing: -.055em">O MELHOR DO CAMINHO<br><span style="color: #50D0A8">É TER COM QUEM DIVIDIR.</span></h2>
+<p style="margin: 0 0 28px; max-width: 460px; font-size: 16px; line-height: 1.65; color: #dddddd">Faz diferença encontrar um lugar onde você se sente parte e tem gente vibrando pelas suas conquistas.</p>
+<ul style="list-style: none; margin: 0 0 32px; padding: 0; border-bottom: 1px solid #2a2a2a"><li style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid #2a2a2a"><span style="width: 40px; height: 40px; border-radius: 9px; background: #191919; color: #50D0A8; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 5.5a5 5 0 0 0-7 0L12 7l-1.5-1.5a5 5 0 0 0-7 7L12 21l8.5-8.5a5 5 0 0 0 0-7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg></span><span style="font-size: 17px; font-weight: 600; letter-spacing: -.02em">Uma família que acolhe</span></li><li style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid #2a2a2a"><span style="width: 40px; height: 40px; border-radius: 9px; background: #191919; color: #50D0A8; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor"></circle></svg></span><span style="font-size: 17px; font-weight: 600; letter-spacing: -.02em">Seu objetivo é respeitado</span></li><li style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid #2a2a2a"><span style="width: 40px; height: 40px; border-radius: 9px; background: #191919; color: #50D0A8; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M2 20v-2c0-3 2.7-5 7-5s7 2 7 5v2M18 4c1.5.5 2.3 1.5 2.3 3s-.8 2.5-2.3 3m1 3c2.2.5 3 2 3 4v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span><span style="font-size: 17px; font-weight: 600; letter-spacing: -.02em">Todo mundo vibra junto</span></li></ul>
+<div><a class="tb-btn tb-mint" href="#comunidade">Conhecer a família <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div>
+</div>
+</div>
+</section>
+
+<!-- ============ DIFERENCIAIS ============ -->
+<section style="padding: clamp(64px, 8vw, 112px) 0; background: #e7f8f1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="margin-bottom: 44px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #1f6b54">O que a gente acredita</p>
+<h2 style="margin: 0; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">NÃO É SÓ TREINAR.<br>É FAZER PARTE.</h2>
+</div>
+<div class="bl-grid">
+<article class="bl-card"><div class="bl-top"><span class="bl-num">01</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M2.5 20.5c.5-3.6 3.2-6 6.5-6s6 2.4 6.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 8v6M16 11h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><h3>Gente que soma</h3><p>Mais do que colegas de treino, pessoas que incentivam e comemoram junto.</p></article>
+<article class="bl-card"><div class="bl-top"><span class="bl-num">02</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5h4.5V16H12v-4.5h4.5V7H21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 12.5 10 6.5M6.5 6.5H10V10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><h3>Seu começo importa</h3><p>Não precisa estar pronto pra começar. O importante é dar o primeiro passo.</p></article>
+<article class="bl-card"><div class="bl-top"><span class="bl-num">03</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><circle cx="12" cy="12" r="1" fill="currentColor"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><h3>Metas com direção</h3><p>Na assessoria, cada treino é pensado pro seu objetivo individual.</p></article>
+<article class="bl-card"><div class="bl-top"><span class="bl-num">04</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M3 10h18M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="m8.5 15.2 2.4 2.3 4.6-4.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><h3>Movimento na rotina</h3><p>Na academia, seu compromisso com você ganha um lugar especial.</p></article>
+<article class="bl-card"><div class="bl-top"><span class="bl-num">05</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9M7.5 3l3 6.2M16.5 3l-3 6.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="15" r="6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle><path d="m12 12.1.95 1.9 2.1.3-1.5 1.45.35 2.1L12 16.85l-1.9 1 .35-2.1-1.5-1.45 2.1-.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"></path></svg></span><h3>Momentos pra viver</h3><p>Os eventos dão vida à emoção que só quem já cruzou uma chegada conhece.</p></article>
+<article class="bl-card"><div class="bl-top"><span class="bl-num">06</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3-5.5 4.5 2.8 4.6L8 10.4V21h8V10.4l2.7 1.7 2.8-4.6L16 3c-.9 1.7-2.2 2.6-4 2.6S8.9 4.7 8 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17.2s-2.6-1.5-2.6-3.2a1.3 1.3 0 0 1 2.6-.45 1.3 1.3 0 0 1 2.6.45c0 1.7-2.6 3.2-2.6 3.2Z" fill="currentColor"></path></svg></span><h3>Orgulho de vestir</h3><p>Peças e uniformes que carregam essa energia para fora do treino.</p></article>
+<article class="bl-feature"><svg class="bl-rings" viewBox="0 0 300 300" aria-hidden="true"><circle cx="300" cy="300" r="110" fill="none" stroke="#50D0A8" stroke-opacity=".22"></circle><circle cx="300" cy="300" r="170" fill="none" stroke="#50D0A8" stroke-opacity=".15"></circle><circle cx="300" cy="300" r="230" fill="none" stroke="#50D0A8" stroke-opacity=".09"></circle></svg><div class="bl-top"><span class="bl-num" style="color: #50D0A8">07</span><span class="bl-check" aria-hidden="true">✓</span></div><span class="bl-ic bl-ic-dark"><svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6c-2 2-2.6 5-1.5 7.6M5.4 8.6 3.6 8M5 11.5l-1.8.2M5.7 14.2l-1.4 1M17 6c2 2 2.6 5 1.5 7.6M18.6 8.6l1.8-.6M19 11.5l1.8.2M18.3 14.2l1.4 1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="m12 7.6 1.2 2.4 2.6.4-1.9 1.8.45 2.6L12 13.6l-2.35 1.2.45-2.6-1.9-1.8 2.6-.4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 18.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><div style="flex: 1"></div><h3>O jeito Tubarun de viver o esporte</h3><p>Uma experiência que começa em cada área e cresce quando a galera se encontra.</p></article>
+</div>
+</div>
+</section>
+
+<!-- ============ COMO FAZER PARTE ============ -->
+<section id="como-fazer-parte" style="padding: clamp(64px, 8vw, 112px) 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 56px">
+<div style="flex: 1 1 560px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #646464">Como fazer parte</p>
+<h2 style="margin: 0; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">SEU PRÓXIMO PASSO<br>É MAIS SIMPLES<br><span style="color: #646464">DO QUE PARECE.</span></h2>
+</div>
+<div style="flex: 1 1 340px; max-width: 420px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #646464">Não precisa saber tudo agora. A gente te ajuda a encontrar a melhor forma de começar na Tubarun.</p>
+<a class="tb-btn tb-dark" href="#contato">Quero fazer parte <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+</div>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<li style="padding: 28px 26px 30px; border-radius: 18px; background: #f7f7f7; border: 1px solid #e5e5e5"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 56px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #50D0A8"></span><span style="height: 1px; flex: 1; background: #dddddd"></span></div><div style="font-size: 56px; font-weight: 600; letter-spacing: -.07em; line-height: 1; margin-bottom: 18px">01</div><h3 style="margin: 0 0 8px; font-size: 22px; font-weight: 600; letter-spacing: -.035em">Escolha seu caminho</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #646464">Academia, assessoria, eventos ou loja: comece pelo que faz sentido pra você.</p></li>
+<li style="padding: 28px 26px 30px; border-radius: 18px; background: #f7f7f7; border: 1px solid #e5e5e5"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 56px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #50D0A8"></span><span style="height: 1px; flex: 1; background: #dddddd"></span></div><div style="font-size: 56px; font-weight: 600; letter-spacing: -.07em; line-height: 1; margin-bottom: 18px">02</div><h3 style="margin: 0 0 8px; font-size: 22px; font-weight: 600; letter-spacing: -.035em">Chama a equipe</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #646464">Converse com a gente, tire suas dúvidas e descubra como funciona cada área.</p></li>
+<li style="padding: 28px 26px 30px; border-radius: 18px; background: #f7f7f7; border: 1px solid #e5e5e5"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 56px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #50D0A8"></span><span style="height: 1px; flex: 1; background: #dddddd"></span></div><div style="font-size: 56px; font-weight: 600; letter-spacing: -.07em; line-height: 1; margin-bottom: 18px">03</div><h3 style="margin: 0 0 8px; font-size: 22px; font-weight: 600; letter-spacing: -.035em">Encontre seu lugar</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #646464">Conheça as opções, os formatos e os próximos passos pra participar.</p></li>
+<li style="padding: 28px 26px 30px; border-radius: 18px; background: #000; color: #fff"><div style="display: flex; align-items: center; gap: 12px; margin-bottom: 56px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #50D0A8"></span><span style="height: 1px; flex: 1; background: #3a3a3a"></span></div><div style="font-size: 56px; font-weight: 600; letter-spacing: -.07em; line-height: 1; margin-bottom: 18px; color: #50D0A8">04</div><h3 style="margin: 0 0 8px; font-size: 22px; font-weight: 600; letter-spacing: -.035em">Viva a Tubarun</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #dddddd">Chega junto. O esporte fica ainda melhor quando a gente compartilha.</p></li>
+</ol>
+</div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section id="comunidade" style="padding: clamp(64px, 8vw, 112px) 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 40px">
+<div style="flex: 1 1 520px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #646464">Essa é a família Tubarun</p>
+<h2 style="margin: 0; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">A GENTE TREINA.<br>A GENTE VIVE JUNTO.</h2>
+</div>
+<p style="flex: 1 1 340px; max-width: 420px; margin: 0; font-size: 16px; line-height: 1.65; color: #646464">Treinos, eventos, bastidores, encontros e aquela resenha depois da atividade. Aqui vai entrar a Tubarun de verdade, pelas fotos de quem faz parte.</p>
+</div>
+<div class="g-grid">
+<figure class="g-tile g-big"><img src="assets/img/g_medals.jpg" alt="Turma da Tubarun com medalhas depois de uma corrida de rua" loading="lazy" style="object-position: 50% 50%"><figcaption><div class="g-title g-title-lg">OS MOMENTOS DA<br>NOSSA FAMÍLIA</div><div class="g-sub">Corrida, medalha no peito e a galera junto.</div></figcaption></figure>
+<figure class="g-tile g-tall"><img src="assets/img/g_runner.jpg" alt="Atleta da assessoria sorrindo durante a prova" loading="lazy" style="object-position: 50% 22%"><figcaption><div class="g-title">EVENTOS QUE<br>MOVIMENTAM</div></figcaption></figure>
+<figure class="g-tile g-tall"><img src="assets/img/g_trophy.jpg" alt="Atleta da Tubarun mostrando troféu e medalha de primeiro lugar" loading="lazy" style="object-position: 50% 25%"><figcaption><div class="g-title">TREINOS E<br>CONQUISTAS</div></figcaption></figure>
+<figure class="g-tile g-tall"><img src="assets/img/g_academia.jpg" alt="Aluna e professor na Academia Tubarun" loading="lazy" style="object-position: 50% 22%"><figcaption><div class="g-title">O DIA A DIA<br>NA ACADEMIA</div></figcaption></figure>
+<figure class="g-tile g-tall"><img src="assets/img/g_track.jpg" alt="Grupo da assessoria na pista de atletismo" loading="lazy" style="object-position: 50% 50%"><figcaption><div class="g-title">QUEM VESTE<br>ESSA CAMISA</div></figcaption></figure>
+<figure class="g-tile g-big"><img src="assets/img/g_swim.jpg" alt="Grupo de natação em águas abertas comemorando na praia" loading="lazy" style="object-position: 50% 62%"><figcaption><div class="g-title g-title-lg">DO ASFALTO<br>AO MAR</div><div class="g-sub">Corrida, ciclismo, natação e triathlon.</div></figcaption></figure>
+</div>
+</div>
+</section>
+
+<!-- ============ EVENTOS ============ -->
+<section id="eventos" style="padding: clamp(64px, 8vw, 112px) 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; border-radius: 22px; overflow: hidden; background: #000; color: #fff">
+<div style="flex: 1 1 460px; padding: clamp(32px, 5vw, 64px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center">
+<img loading="lazy" decoding="async" src="assets/img/logo_eventos.jpg" alt="Logo Tubarun Eventos Esportivos, Pontal do Paraná-PR" style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; margin-bottom: 28px; box-shadow: 0 0 0 4px #000, 0 0 0 5px #2a2a2a">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #50D0A8">Tubarun Eventos Esportivos</p>
+<h2 style="margin: 0 0 22px; font-size: clamp(36px, 4.6vw, 62px); font-weight: 600; line-height: .92; letter-spacing: -.055em">QUER UM EVENTO<br><span style="color: #50D0A8">COM A NOSSA ENERGIA?</span></h2>
+<p style="margin: 0 0 24px; max-width: 480px; font-size: 16px; line-height: 1.65; color: #dddddd">A Tubarun organiza corridas de rua e eventos esportivos. Se você quer levar essa experiência para sua empresa, cidade ou comunidade, a nossa equipe constrói o evento junto com você.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px"><span class="ev-chip">Corridas de rua</span><span class="ev-chip">Provas e desafios</span><span class="ev-chip">Eventos para empresas</span><span class="ev-chip">Ações para cidades e comunidades</span></div>
+<div><a class="tb-btn tb-mint wa-link" href="#contato" data-msg="Olá! Tenho interesse em contratar um evento da Tubarun.">Quero um evento Tubarun <span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg></span></a></div>
+</div>
+<div style="flex: 1 1 400px; position: relative; min-height: 520px">
+<img src="assets/img/eventos.jpg" alt="Largada de corrida de rua organizada pela Tubarun" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 35%)"></div>
+<span style="position: absolute; left: 20px; bottom: 20px; padding: 8px 12px; border-radius: 5px; background: #50D0A8; color: #000; font-size: 11px; font-weight: 600; letter-spacing: .14em">ORGANIZAÇÃO TUBARUN</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ ROUPAS TUBARUN ============ -->
+<section id="loja" style="padding: clamp(64px, 8vw, 112px) 0; background: #000; color: #fff">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 48px">
+<div style="flex: 1 1 520px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #50D0A8">Loja &amp; uniformes</p>
+<h2 style="margin: 0; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">VISTA A ENERGIA<br><span style="color: #50D0A8">DE QUEM FAZ PARTE.</span></h2>
+</div>
+<div style="flex: 1 1 340px; max-width: 420px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #dddddd">Peças que acompanham quem não para. Roupas e uniformes pensados pra juntar conforto, desempenho e o orgulho de fazer parte.</p>
+<a class="tb-btn tb-mint" href="#contato">Conhecer a loja <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+</div>
+</div>
+<div class="p-grid">
+<article class="p-card"><div class="p-img"><img src="assets/img/p1.jpg" alt="Camiseta Tubarun — Preta · dry fit" loading="lazy"></div><div class="p-meta"><h3>Camiseta Tubarun</h3><span>Preta · dry fit</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p2.jpg" alt="Camiseta Degradê — Menta e azul" loading="lazy"></div><div class="p-meta"><h3>Camiseta Degradê</h3><span>Menta e azul</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p6.jpg" alt="Regata Degradê — Menta e preto" loading="lazy"></div><div class="p-meta"><h3>Regata Degradê</h3><span>Menta e preto</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p7.jpg" alt="Top Tubarun — Preto e menta" loading="lazy"></div><div class="p-meta"><h3>Top Tubarun</h3><span>Preto e menta</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p3.jpg" alt="Shorts Tubarun — Preto e menta" loading="lazy"></div><div class="p-meta"><h3>Shorts Tubarun</h3><span>Preto e menta</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p4.jpg" alt="Corta-vento — Estampa Atleta" loading="lazy"></div><div class="p-meta"><h3>Corta-vento</h3><span>Estampa Atleta</span></div></article>
+<article class="p-card"><div class="p-img"><img src="assets/img/p5.jpg" alt="Moletom Tubarun — Preto com capuz" loading="lazy"></div><div class="p-meta"><h3>Moletom Tubarun</h3><span>Preto com capuz</span></div></article>
+<a class="p-card p-cta" href="#contato"><div><p style="margin: 0 0 10px; font-size: 11px; font-weight: 600; letter-spacing: .16em">QUER A SUA?</p><h3 style="margin: 0; font-size: 30px; font-weight: 600; line-height: .95; letter-spacing: -.05em">VISTA A<br>CAMISA DA<br>FAMÍLIA.</h3></div><span class="p-cta-ar">Falar com a equipe <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></a>
+</div>
+<p style="margin: 22px 0 0; font-size: 13px; color: #8a8a8a">Fale com a equipe para conhecer os produtos, tamanhos e disponibilidade.</p>
+</div>
+</section>
+
+<!-- ============ SOBRE NILTON ============ -->
+<section id="sobre" style="padding: clamp(64px, 8vw, 112px) 0; background: #f7f7f7">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: stretch">
+<div class="ph" style="flex: 1 1 380px; position: relative; min-height: 580px; border-radius: 22px; overflow: hidden">
+<img src="assets/img/nilton2.jpg" alt="Nilton Santos saindo do mar com o macacão de triathlon da Tubarun" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%">
+<div style="position: absolute; left: 20px; right: 20px; bottom: 20px; padding: 18px 20px; border-radius: 18px; background: #fff; display: flex; align-items: center; justify-content: space-between; gap: 14px">
+<div><div style="font-size: 20px; font-weight: 600; letter-spacing: -.035em">Nilton Santos</div><div style="font-size: 13px; color: #646464; margin-top: 2px">Professor e fundador da Tubarun</div></div>
+<span style="width: 44px; height: 44px; border-radius: 9px; background: #50D0A8; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="15.5" cy="4.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="m13 8-3.5 3 3.5 2 1.5 5m-2-11 4 3 4 1M9.5 11l-5 2m7 3-4.5 5m7-3 4.5 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+</div>
+</div>
+<div style="flex: 1 1 480px; display: flex; flex-direction: column; justify-content: center">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #646464">Conheça quem está à frente</p>
+<h2 style="margin: 0 0 28px; font-size: clamp(36px, 4.4vw, 60px); font-weight: 600; line-height: .92; letter-spacing: -.055em">POR TRÁS DA TUBARUN,<br>UMA VIDA LIGADA AO ESPORTE.</h2>
+<p style="margin: 0 0 14px; font-size: 16px; line-height: 1.65; color: #3a3a3a">Nilton Santos é professor de educação física, triatleta, maratonista e fundador da Tubarun Academia, Assessoria e Eventos. Também é pai e marido.</p>
+<p style="margin: 0 0 28px; font-size: 16px; line-height: 1.65; color: #3a3a3a">Na Tubarun, ele une a experiência de quem vive o esporte com a vontade de aproximar pessoas. Ao lado da equipe, ajuda a construir um ambiente em que cada aluno, atleta e participante encontra espaço pra fazer parte.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px">
+<span style="padding: 8px 12px; border-radius: 5px; background: #000; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .14em">PROFESSOR</span>
+<span style="padding: 8px 12px; border-radius: 5px; background: #000; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .14em">TRIATLETA</span>
+<span style="padding: 8px 12px; border-radius: 5px; background: #000; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .14em">MARATONISTA</span>
+<span style="padding: 8px 12px; border-radius: 5px; background: #50D0A8; color: #000; font-size: 11px; font-weight: 600; letter-spacing: .14em">FUNDADOR</span>
+</div>
+<div><a class="tb-btn tb-dark" href="#contato">Falar com a equipe <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div>
+</div>
+</div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="padding: clamp(64px, 8vw, 112px) 0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 340px">
+<p style="margin: 0 0 18px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #646464">Ainda tem alguma dúvida?</p>
+<h2 style="margin: 0 0 22px; font-size: clamp(38px, 5vw, 66px); font-weight: 600; line-height: .92; letter-spacing: -.055em">A GENTE<br>TE RESPONDE.</h2>
+<p style="margin: 0 0 28px; max-width: 380px; font-size: 16px; line-height: 1.65; color: #646464">Pra conhecer a Tubarun, não precisa complicar. Dá uma olhada nas perguntas ou chama a equipe.</p>
+<a class="tb-btn tb-dark" href="#contato">Tirar uma dúvida <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+</div>
+<div style="flex: 2 1 520px; border-top: 1px solid #e5e5e5">
+<div class="faq-item open" style="border-bottom: 1px solid #e5e5e5">
+<button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-0"><span>A Tubarun é só uma assessoria de corrida?</span><span class="faq-ic" aria-hidden="true"><svg class="plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span></button>
+<p class="faq-a" id="faq-0">Não. A Tubarun é um ecossistema com Academia, Assessoria Esportiva, Eventos Esportivos e Loja de Roupas e Uniformes. Cada área tem sua própria proposta, mas todas fazem parte da mesma família.</p>
+</div>
+<div class="faq-item" style="border-bottom: 1px solid #e5e5e5">
+<button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-1"><span>Qual é a diferença entre a Academia e a Assessoria?</span><span class="faq-ic" aria-hidden="true"><svg class="plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span></button>
+<p class="faq-a" id="faq-1" hidden>A Academia é o espaço de treinos e rotina de atividade física. A Assessoria Esportiva trabalha com orientação e planejamento personalizado para corrida, ciclismo, natação e triathlon, incluindo opções online e presenciais, conforme disponibilidade.</p>
+</div>
+<div class="faq-item" style="border-bottom: 1px solid #e5e5e5">
+<button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-2"><span>A Tubarun organiza eventos esportivos?</span><span class="faq-ic" aria-hidden="true"><svg class="plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span></button>
+<p class="faq-a" id="faq-2" hidden>Sim. A Tubarun também atua na organização de corridas de rua e eventos esportivos. Entre em contato com a equipe de Eventos para saber mais.</p>
+</div>
+<div class="faq-item" style="border-bottom: 1px solid #e5e5e5">
+<button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-3"><span>Onde encontro as roupas e uniformes?</span><span class="faq-ic" aria-hidden="true"><svg class="plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span></button>
+<p class="faq-a" id="faq-3" hidden>Na área de Loja e Uniformes, você pode entrar em contato diretamente para conhecer os produtos e verificar disponibilidade.</p>
+</div>
+<div class="faq-item" style="border-bottom: 1px solid #e5e5e5">
+<button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-4"><span>Não sei por onde começar. Com quem eu falo?</span><span class="faq-ic" aria-hidden="true"><svg class="plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span></button>
+<p class="faq-a" id="faq-4" hidden>Pode chamar a equipe pelo botão abaixo. Conte o que você procura e a gente te direciona para a área certa da Tubarun.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ CHAMADA FINAL ============ -->
+<section id="contato" style="padding: 0 14px 14px; box-sizing: border-box">
+<div style="position: relative; overflow: hidden; border-radius: 22px; background: #000; color: #fff; padding: clamp(80px, 10vw, 150px) clamp(24px, 5vw, 72px) clamp(56px, 7vw, 96px)">
+<img src="assets/img/cta.jpg" alt="" aria-hidden="true" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.6) 55%, rgba(0,0,0,.35) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between">
+<div style="flex: 2 1 560px">
+<p style="margin: 0 0 20px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #50D0A8">Seu lugar pode ser aqui</p>
+<h2 style="margin: 0; font-size: clamp(48px, 7.6vw, 116px); font-weight: 600; line-height: .88; letter-spacing: -.06em">BORA FAZER PARTE<br><span style="color: #50D0A8">DESSA FAMÍLIA?</span></h2>
+</div>
+<div style="flex: 1 1 320px; max-width: 420px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #dddddd">Seja pra treinar, correr, participar de um evento ou vestir a camisa: a Tubarun tem um jeito de viver o esporte que combina com você.</p>
+<a class="tb-btn tb-mint" href="#contato">Quero conhecer a Tubarun <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ RODAPÉ ============ -->
+<footer style="background: #000; color: #fff; padding: 64px 0 32px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; justify-content: space-between; padding-bottom: 40px; border-bottom: 1px solid #2a2a2a">
+<div style="flex: 1 1 300px">
+<img loading="lazy" decoding="async" src="assets/img/logo.png" alt="Tubarun" style="display: block; width: min(420px, 100%); height: auto; margin-left: -10px">
+<p style="margin: 18px 0 0; max-width: 340px; font-size: 15px; line-height: 1.6; color: #dddddd">Um ecossistema movido por pessoas e pelo esporte.</p>
+</div>
+<nav class="foot-nav" aria-label="Menu do rodapé" style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px">
+<a href="#inicio">Início</a>
+<a href="#loja">Uniformes</a>
+<a href="#assessoria">Assessoria</a>
+<a href="#academia">Academia</a>
+<a href="#eventos">Eventos</a>
+<a class="wa-link" href="#contato" data-msg="Olá! Vim pelo site da Tubarun e quero mais informações.">Contato pelo WhatsApp</a>
+</nav>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; padding-top: 24px; font-size: 13px; color: #8a8a8a">
+<span>© 2026 Tubarun. Todos os direitos reservados.</span>
+<span>Academia · Assessoria · Eventos · Loja</span>
+</div>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.bg-slide'));
+  var dots=[].slice.call(document.querySelectorAll('.bg-dot'));
+  var i=0;
+  if(slides.length>1){
+    setInterval(function(){
+      slides[i].classList.remove('bg-on'); if(dots[i]) dots[i].classList.remove('bg-dot-on');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('bg-on'); if(dots[i]) dots[i].classList.add('bg-dot-on');
+    },6000);
+  }
+  var faqItems=[].slice.call(document.querySelectorAll('.faq-item'));
+  faqItems.forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var willOpen=!item.classList.contains('open');
+      faqItems.forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        o.querySelector('.faq-a').hidden=true;
+      });
+      if(willOpen){
+        item.classList.add('open');
+        item.querySelector('.faq-q').setAttribute('aria-expanded','true');
+        item.querySelector('.faq-a').hidden=false;
+      }
+    });
+  });
+  var bar=document.querySelector('.topbar'), tog=bar&&bar.querySelector('.menu-toggle');
+  if(tog){
+    var setOpen=function(o){bar.classList.toggle('open',o);tog.setAttribute('aria-expanded',o?'true':'false');tog.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');};
+    tog.addEventListener('click',function(){setOpen(!bar.classList.contains('open'));});
+    bar.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&bar.classList.contains('open')){setOpen(false);tog.focus();}});
+    document.addEventListener('click',function(e){if(!bar.contains(e.target))setOpen(false);});
+  }
+  // WhatsApp: coloque o número com DDI + DDD, só dígitos. Ex.: '5541999999999'
+  var WHATSAPP = '';
+  document.querySelectorAll('.wa-link').forEach(function(a){
+    if(!WHATSAPP) return;
+    a.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(a.getAttribute('data-msg')||'');
+    a.target='_blank'; a.rel='noopener';
+  });
+  /* ===== Animações ===== */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  if(!reduce && 'IntersectionObserver' in window){
+    root.classList.add('js-anim');
+    var splitLines = function(h){
+      var parts = h.innerHTML.split(/<br\s*\/?>/i);
+      h.innerHTML = parts.map(function(p,i){return '<span class="ln"><span class="ln-in" style="--d:'+(i*110)+'ms">'+p+'</span></span>';}).join('');
+    };
+    // Hero: texto principal sem animação; só o card +200 flutua de leve
+    var hero=document.getElementById('inicio');
+    var card=hero&&hero.querySelector('h1 + div > div:last-child > div'); if(card) card.classList.add('float');
+    // Títulos de seção: linha por linha
+    document.querySelectorAll('section:not(#inicio) h2').forEach(function(h){ splitLines(h); h.classList.add('rv-title'); });
+    // Elementos que entram ao rolar
+    var groups = ['.eco','.bl-card,.bl-feature','.p-card','.g-tile','#como-fazer-parte li','.faq-item','#numeros-titulo + div > div','#essencia li'];
+    groups.forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){
+        var sib = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.classList.add('rv'); el.style.setProperty('--d', Math.min(sib,7)*90+'ms');
+      });
+    });
+    document.querySelectorAll('section:not(#inicio) p').forEach(function(p){
+      if(/uppercase/.test(p.getAttribute('style')||'') || p.closest('.bl-card,.bl-feature,.p-card,.eco,.faq-item')) return;
+      if(p.closest('section') && !p.classList.contains('rv')){ p.classList.add('rv'); p.style.setProperty('--d','120ms'); }
+    });
+    document.querySelectorAll('section:not(#inicio) p[style*="uppercase"]').forEach(function(p){ p.classList.add('rv'); });
+    document.querySelectorAll('#essencia .ph, #sobre .ph, #eventos img[loading] , #contato > div').forEach(function(el){
+      var box = el.tagName==='IMG' ? el.parentNode : el;
+      if(box.id==='contato') return;
+      box.classList.add('rv-img');
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.target.classList.toggle('in', e.isIntersecting); });
+    }, {rootMargin:'-6% 0px -8% 0px', threshold:0.08});
+    document.querySelectorAll('.rv,.rv-title,.rv-img').forEach(function(el){ io.observe(el); });
+
+    // Números: contam toda vez que aparecem (descendo ou subindo)
+    var nums = Array.prototype.slice.call(document.querySelectorAll('#numeros-titulo + div > div > div:first-child'));
+    if(card){ var hn=[].slice.call(card.querySelectorAll('div')).filter(function(d){return /^\+\d+$/.test(d.textContent.trim());})[0]; if(hn) nums.push(hn); }
+    nums.forEach(function(el){ el.dataset.final = el.textContent.trim(); });
+    var runCount = function(el){
+      var m = el.dataset.final.match(/^(\D*)(\d+)$/); if(!m) return;
+      var pre=m[1], end=parseInt(m[2],10), pad=m[2].length, t0=null, dur=1500, id=(el._run=(el._run||0)+1);
+      var step=function(t){ if(id!==el._run) return; if(!t0)t0=t; var k=Math.min((t-t0)/dur,1), v=Math.round(end*(1-Math.pow(1-k,3)));
+        var sv=String(v); while(sv.length<pad) sv='0'+sv; el.textContent=pre+sv; if(k<1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    };
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var el=e.target, card=el.parentNode;
+        if(e.isIntersecting){ card.classList.add('num-on'); runCount(el); }
+        else { el._run=(el._run||0)+1; card.classList.remove('num-on'); var m=el.dataset.final.match(/^(\D*)(\d+)$/); if(m){ el.textContent=m[1]+(m[2].length>1?'00':'0'); } }
+      });
+    }, {threshold:0.4});
+    nums.forEach(function(n){ cio.observe(n); });
+  }
+})();
+</script>
+</body>
+</html>
