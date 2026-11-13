@@ -249,6 +249,16 @@ body{overflow-x:clip}
 .foot-contacts a svg{color:#50D0A8;flex:none}
 .foot-contacts a small{display:block;font-size:12px;font-weight:400;color:#8a8a8a}
 .foot-contacts a:hover{color:#50D0A8}
+
+/* ===== Contato direto (última lâmina) ===== */
+.tb-contact{display:flex;flex-direction:column;gap:14px}
+.tb-contact-main{justify-content:space-between;width:100%}
+.tb-contact-h{margin:6px 0 0;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#50D0A8}
+.tb-contact-list{display:flex;flex-direction:column;gap:8px}
+.tb-contact-list a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font-size:16px;font-weight:600;backdrop-filter:blur(8px);transition:border-color .2s,transform .2s}
+.tb-contact-list a:hover{border-color:#50D0A8;transform:translateY(-2px)}
+.tb-contact-list svg{color:#50D0A8;flex:none}
+.tb-contact-list small{display:block;font-size:12px;font-weight:400;color:#b5b5b5}
 </style>
 </head>
 <body>
@@ -574,23 +584,7 @@ body{overflow-x:clip}
 </div>
 <div style="flex: 1 1 360px; max-width: 460px; display: flex; flex-direction: column; gap: 18px; align-items: stretch">
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #dddddd">Seja pra treinar, correr, participar de um evento ou vestir a camisa: a Tubarun tem um jeito de viver o esporte que combina com você.</p>
-<form class="tb-form" id="tb-form" novalidate>
-<div class="tb-field"><label for="tb-nome">Seu nome</label><input id="tb-nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required minlength="2" maxlength="120"></div>
-<div class="tb-field"><label for="tb-whats">WhatsApp</label><input id="tb-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(41) 99999-9999" required minlength="8" maxlength="20"></div>
-<div class="tb-field"><label for="tb-interesse">Tenho interesse em</label>
-<select id="tb-interesse" name="interesse" required>
-<option value="academia">Academia</option>
-<option value="assessoria">Assessoria esportiva</option>
-<option value="eventos">Participar de eventos</option>
-<option value="evento_contratar">Contratar um evento da Tubarun</option>
-<option value="loja">Loja &amp; uniformes</option>
-<option value="outro">Ainda não sei / outro</option>
-</select></div>
-<div class="tb-field"><label for="tb-msg">Mensagem <span>(opcional)</span></label><textarea id="tb-msg" name="mensagem" rows="3" maxlength="1000" placeholder="Conte rapidinho o que você procura"></textarea></div>
-<input class="tb-hp" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true">
-<button type="submit" class="tb-btn tb-mint tb-form-btn">Quero fazer parte <span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></button>
-<p class="tb-form-status" role="status" aria-live="polite"></p>
-</form>
+<div class="tb-contact"><a class="tb-btn tb-mint tb-contact-main" href="https://wa.me/5541996463252?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Tubarun%20e%20quero%20fazer%20parte%20da%20fam%C3%ADlia%20Tubarun." target="_blank" rel="noopener">Quero conhecer a Tubarun <span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg></span></a><p class="tb-contact-h">Ou fale direto com a área</p><div class="tb-contact-list"><a href="https://wa.me/5541996463252?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Tubarun%20e%20quero%20saber%20mais%20sobre%20a%20Assessoria%20Esportiva." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg><span><small>Assessoria e loja · Prof. Nilton</small>(41) 99646-3252</span></a><a href="https://wa.me/5541996864446?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Tubarun%20e%20quero%20conhecer%20a%20Academia." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg><span><small>Academia Tubarun</small>(41) 99686-4446</span></a><a href="https://wa.me/5541988444149?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20contratar%20um%20evento%20da%20Tubarun." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.8 1 1.5 1.7 2.1.7.6 1.4 1 2.2 1.3.3.1.5 0 .6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.5.2.5.4 0 .5-.1 1.2-.6 1.7-.5.5-1.4 1-2.4.9-1-.1-2.6-.6-4.3-2.1-2-1.8-3-3.6-3.3-4.8-.3-1.2.1-2.2.6-2.9Z" fill="currentColor"></path></svg><span><small>Tubarun Eventos Esportivos</small>(41) 98844-4149</span></a></div></div>
 </div>
 </div>
 </div>
