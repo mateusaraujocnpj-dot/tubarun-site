@@ -119,7 +119,7 @@ html{scroll-behavior:smooth}
 .ev-chip{padding:9px 13px;border-radius:9px;border:1px solid #3a3a3a;font-size:13px;font-weight:500;color:#fff}
 .ev-step{padding:28px;border-radius:18px;background:#f7f7f7;border:1px solid #e5e5e5}
 .ev-ic{width:52px;height:52px;border-radius:14px;background:#000;color:#50D0A8;display:inline-flex;align-items:center;justify-content:center}
-#academia,#assessoria,#eventos,#loja{scroll-margin-top:16px}
+[id]{scroll-margin-top:96px}
 @media (max-width:520px){.brand-sub{display:none}}
 .bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.05fr);gap:22px}
 .bl-card,.bl-feature{position:relative;display:flex;flex-direction:column;border-radius:22px;padding:32px 34px 36px;box-sizing:border-box;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
@@ -230,12 +230,19 @@ img{max-width:100%}
 .tb-form-btn[disabled]{opacity:.6;cursor:wait;transform:none}
 .tb-form-status{margin:0;min-height:20px;font-size:14px;line-height:1.5;color:#dddddd}
 .tb-form-status.ok{color:#50D0A8}.tb-form-status.err{color:#ff8a8a}
+
+/* ===== Menu fixo ao rolar ===== */
+html{scroll-padding-top:96px}
+body{overflow-x:clip}
+.topbar{-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);transition:box-shadow .25s ease,padding .25s ease}
+.topbar.is-scrolled{box-shadow:0 6px 24px rgba(0,0,0,.08);border-bottom:1px solid #eee;padding-top:10px!important;padding-bottom:10px!important}
+@supports not (overflow:clip){body>div:first-child{overflow-x:visible!important}}
 </style>
 </head>
 <body>
-<div style="width: 100%; overflow-x: hidden">
+<div style="width: 100%; overflow-x: clip">
 
-<header class="topbar" style="position: relative; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; max-width: 1412px; margin: 0 auto; padding: 14px clamp(18px, 3vw, 34px); box-sizing: border-box; background: #fff; color: #000">
+<header class="topbar" style="position: sticky; top: 0; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; width: 100%; margin: 0; padding: 14px max(clamp(18px, 3vw, 34px), calc((100% - 1412px) / 2 + 34px)); box-sizing: border-box; background: rgba(255,255,255,.96); color: #000">
 <a href="#inicio" class="brand" aria-label="Tubarun — início" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #000"><img src="assets/img/logo_white.png" alt="Tubarun" style="display: block; height: 38px; width: auto"></a>
 <nav class="nav" id="menu-principal" aria-label="Menu principal" style="display: flex; flex-wrap: wrap; gap: 6px 26px">
 <a href="#inicio">Início</a>
@@ -684,6 +691,11 @@ img{max-width:100%}
       }finally{ btn.disabled=false; }
     });
   }
+
+  /* ===== Menu fixo: sombra ao rolar ===== */
+  (function(){var tb=document.querySelector('.topbar'); if(!tb) return;
+    var onS=function(){tb.classList.toggle('is-scrolled', window.scrollY>8);};
+    window.addEventListener('scroll',onS,{passive:true}); onS();})();
   /* ===== Animações ===== */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
